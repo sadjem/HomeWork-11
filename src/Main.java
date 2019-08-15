@@ -34,26 +34,7 @@ public class Main extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                gc.clearRect(0, 0, BOARD_HEIGHT, BOARD_WIDTH);
-                if (event.getCode() == KeyCode.RIGHT) {
-                    board.moveRight();
-                }
-                if (event.getCode() == KeyCode.LEFT) {
-                    board.moveLeft();
-                }
-                if (event.getCode() == KeyCode.UP) {
-                    board.moveUp();
-                }
-                if (event.getCode() == KeyCode.DOWN) {
-                    board.moveDown();
-                }
-                if (event.getCode() == KeyCode.Q) {
-                    board.increaseSizeFigure();
-                }
-                if (event.getCode() == KeyCode.W) {
-                    board.decreaseSizeFigure();
-                }
-                board.draw();
+                board.keyPressed(event);
             }
         });
     }
