@@ -5,12 +5,11 @@ import java.util.List;
 
 public class Ball extends Figure {
 
-    public Ball(GraphicsContext gc, double x, double y, List<Shape> shapes) {
-        super(gc, x, y, shapes);
+    public Ball(GraphicsContext gc, double x, double y, List<Shape> shapes, double diameter) {
+        super(gc, x, y, shapes, diameter);
     }
 
     public void draw() {
-        diameter = 50;
         gc.setFill(Color.RED);
         gc.fillOval(x, y, diameter, diameter);
     }

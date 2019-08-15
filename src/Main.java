@@ -30,6 +30,7 @@ public class Main extends Application {
         primaryStage.show();
         GraphicsContext gc = canvas.getGraphicsContext2D();
         board = new Board(gc);
+        board.draw();
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {

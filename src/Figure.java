@@ -10,11 +10,12 @@ public abstract class Figure implements Shape {
     private  int STEP = 5;
     private int increaseFactor = 2;
 
-    public Figure(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+    public Figure(GraphicsContext gc, double x, double y, List<Shape> shapes, double diameter) {
         this.gc = gc;
         this.x = x;
         this.y = y;
         this.shapes = shapes;
+        this.diameter = diameter;
     }
 
     @Override

@@ -10,8 +10,8 @@ public class Board {
 
     public Board(GraphicsContext gc) {
         this.gc = gc;
-        shapes.add(new Ball(gc, 300, 300, shapes));
-        shapes.add(new Square(gc, 50, 50, shapes));
+        shapes.add(new Ball(gc, 300, 300, shapes,50));
+        shapes.add(new Square(gc, 50, 50, shapes, 50));
     }
 
     public void draw() {
