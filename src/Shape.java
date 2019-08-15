@@ -4,5 +4,6 @@ public interface Shape {
     void moveUp();
     void moveDown();
     void draw();
-    void increaseFigure();
+    void increaseSizeFigure();
+    void decreaseSizeFigure();
 }

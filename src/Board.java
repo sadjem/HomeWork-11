@@ -44,9 +44,15 @@ public class Board {
         }
     }
 
-    public void increaseFigure() {
+    public void increaseSizeFigure() {
         for (Shape shape : shapes) {
-            shape.increaseFigure();
+            shape.increaseSizeFigure();
+        }
+    }
+
+    public void decreaseSizeFigure() {
+        for(Shape shape : shapes){
+            shape.decreaseSizeFigure();
         }
     }
 }

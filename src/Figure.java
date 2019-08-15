@@ -1,4 +1,5 @@
 import javafx.scene.canvas.GraphicsContext;
+
 import java.util.List;
 
 public abstract class Figure implements Shape {
@@ -7,8 +8,8 @@ public abstract class Figure implements Shape {
     protected double x;
     protected double y;
     protected List<Shape> shapes;
-    private  int STEP = 5;
-    private int increaseFactor = 2;
+    private int STEP = 5;
+    private int changeSize = 2;
 
     public Figure(GraphicsContext gc, double x, double y, List<Shape> shapes, double diameter) {
         this.gc = gc;
@@ -38,10 +39,14 @@ public abstract class Figure implements Shape {
         y -= STEP;
     }
 
-
-    public void increaseFigure () {
-        diameter = diameter *increaseFactor;
+    public void increaseSizeFigure() {
+        diameter = diameter * changeSize;
     }
+
+    public void decreaseSizeFigure() {
+        diameter = diameter / changeSize;
+    }
+
     @Override
     public abstract void draw();
 }

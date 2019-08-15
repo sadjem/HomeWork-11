@@ -47,8 +47,11 @@ public class Main extends Application {
                 if (event.getCode() == KeyCode.DOWN) {
                     board.moveDown();
                 }
-                if(event.getCode() == KeyCode.Q){
-                    board.increaseFigure();
+                if (event.getCode() == KeyCode.Q) {
+                    board.increaseSizeFigure();
+                }
+                if (event.getCode() == KeyCode.W) {
+                    board.decreaseSizeFigure();
                 }
                 board.draw();
             }
