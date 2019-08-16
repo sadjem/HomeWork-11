@@ -1,7 +1,9 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +15,8 @@ public class Board {
 
     public Board(GraphicsContext gc) {
         this.gc = gc;
-       shapes.add(new Ball(gc, 300, 300, shapes, 50));
-       shapes.add(new Square(gc, 50, 50, shapes, 50));
+        shapes.add(new Ball(gc, 300, 300, shapes, 50));
+        shapes.add(new Square(gc, 50, 50, shapes, 50));
     }
 
     public void draw() {
@@ -67,8 +69,14 @@ public class Board {
         if (event.getCode() == KeyCode.E) {
             shapes.add(new Ball(gc, 50, 70, shapes, 70));
         }
+        if(event.getCode() == KeyCode.R){
+            shapes.add(new Square(gc,100,170,shapes,50));
+        }
         if (event.getCode() == KeyCode.G) {
             groupFigure();
+        }
+        if (event.getCode() == KeyCode.DELETE) {
+            shapes.remove(index);
         }
         draw();
     }
@@ -82,5 +90,23 @@ public class Board {
         shapes.remove(shape2);
         shapes.add(group);
         index = shapes.size() - 1;
+    }
+
+    public void save() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String output = gson.toJson(shapes);
+        try {
+            saveToFile(output);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveToFile(String output) throws Exception {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream("test.txt")))) {
+            writer.write(output);
+        }
+
     }
 }
