@@ -69,8 +69,11 @@ public class Board {
         if (event.getCode() == KeyCode.E) {
             shapes.add(new Ball(gc, 50, 70, shapes, 70));
         }
-        if(event.getCode() == KeyCode.R){
-            shapes.add(new Square(gc,100,170,shapes,50));
+        if (event.getCode() == KeyCode.R) {
+            shapes.add(new Square(gc, 100, 170, shapes, 50));
+        }
+        if (event.getCode() == KeyCode.T) {
+            shapes.add(new Triangle(gc, 250, 250, shapes, 70));
         }
         if (event.getCode() == KeyCode.G) {
             groupFigure();

@@ -31,12 +31,12 @@ public abstract class Figure implements Shape {
 
     @Override
     public void moveUp() {
-        y += STEP;
+        y -= STEP;
     }
 
     @Override
     public void moveDown() {
-        y -= STEP;
+        y += STEP;
     }
 
     public void increaseSizeFigure() {

@@ -7,7 +7,24 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+/*
+    1. Можно добавить не менее 3 типов фигур +
+    2. У выбранной фигуры можно менять размер и двигать ее +
+    3. Фигуру можно удалить +
+    4. Фигуры можно объеденять в группы (агрегация) и клонировать +-
+    5. Реализовать сохранение/загрузку состояния в файл -
 
+    LEFT - move left;
+    RIGHT = move right;
+    UP - move up;
+    DOWN - move down;
+    Q - increase size figure;
+    W - decrease size figure;
+    PAGE_UP, PAGE_DOWN - change figure;
+    E,R,T = add Ball, Square, Triangle;
+    G - create group from 2 last figures;
+    DELETE - delete figure or group.
+ */
 public class Main extends Application {
     private static int BOARD_HEIGHT = 500;
     private static int BOARD_WIDTH = 500;
