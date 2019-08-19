@@ -54,7 +54,6 @@ public class Main extends Application {
                 board.keyPressed(event);
             }
         });
-      //  board.save();
     }
 
     @Override
